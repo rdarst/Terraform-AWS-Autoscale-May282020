@@ -1,3 +1,60 @@
+variable "key_name" {
+  description = "Desired name of AWS key pair"
+}
+variable "aws_vpc_cidr" {
+}
+variable "aws_external1_subnet_cidr" {
+}
+variable "aws_external2_subnet_cidr" {
+}
+variable "aws_internal1_subnet_cidr" {
+}
+variable "aws_webserver1_subnet_cidr" {
+}
+variable "aws_webserver2_subnet_cidr" {
+}
+variable "aws_externallb1_subnet_cidr" {
+}
+variable "aws_externallb2_subnet_cidr" {
+}
+variable "aws_internallb1_subnet_cidr" {
+}
+variable "aws_internallb2_subnet_cidr" {
+}
+variable "my_user_data" {
+}
+variable "perimeter_user_data" {
+}
+variable "ubuntu_user_data" {
+}
+variable "externaldnshost" {
+}
+variable "cg_size" {
+}
+variable "ws_size" {
+}
+variable "r53zone" {
+}
+variable "SICKey" {
+}
+variable "AllowUploadDownload" {
+}
+variable "pwd_hash" {
+}
+
+variable "aws_region" {
+  description = "AWS region to launch servers."
+  default     = "us-east-2"
+}
+variable "primary_az" {
+  description = "primary AZ"
+  default     = "us-east-2a"
+}
+variable "secondary_az" {
+  description = "secondary AZ"
+  default     = "us-east-2b"
+}
+
 # Check Point R80 BYOL
 data "aws_ami" "chkp_ami" {
   most_recent      = true
