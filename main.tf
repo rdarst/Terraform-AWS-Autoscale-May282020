@@ -333,7 +333,7 @@ resource "aws_autoscaling_group" "web_asg" {
   name = "web-layer-autoscale"
   launch_configuration = aws_launch_configuration.web_conf.id
   max_size = 5
-  min_size = 3
+  min_size = 1
   health_check_grace_period = 5
   target_group_arns = [aws_lb_target_group.webtarget.arn]
   vpc_zone_identifier = [aws_subnet.web1.id,aws_subnet.web2.id]
