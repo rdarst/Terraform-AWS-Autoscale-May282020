@@ -1,3 +1,23 @@
+# Check Point R80 BYOL
+data "aws_ami" "chkp_ami" {
+  most_recent      = true
+  filter {
+    name   = "name"
+    values = ["Check Point CloudGuard IaaS GW BYOL R80.40-*"]
+  }
+  owners = ["679593333241"]
+}
+
+# Ubuntu Image
+data "aws_ami" "ubuntu_ami" {
+  most_recent      = true
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-xenial-16.04-amd64-server-*"]
+  }
+  owners = ["099720109477"]
+}
+
 # Specify the provider and access details
 provider "aws" {
   region = var.aws_region
