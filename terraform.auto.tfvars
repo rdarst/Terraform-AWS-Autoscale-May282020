@@ -1,5 +1,6 @@
 # Adjust vars for the AWS settings and region
 # These VPCs, subnets, and gateways will be created as part of the demo
+#
 public_key_path = "~/.ssh/id_rsa.pub"
 aws_region = "us-east-2"
 key_name = "AWS-rdarst"
