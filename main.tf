@@ -314,8 +314,8 @@ resource "aws_autoscaling_group" "sgw_asg" {
   name = "cloudguard-layer-autoscale"
   launch_configuration = aws_launch_configuration.sgw_conf.id
   max_size = 4
-  min_size = 4
-  desired_capacity = 4
+  min_size = 2
+  desired_capacity = 2
   target_group_arns = [aws_lb_target_group.sgwtarget.arn]
   vpc_zone_identifier = [aws_subnet.external1.id,aws_subnet.external2.id]
   tag {
@@ -334,8 +334,8 @@ resource "aws_autoscaling_group" "web_asg" {
   name = "web-layer-autoscale"
   launch_configuration = aws_launch_configuration.web_conf.id
   max_size = 5
-  min_size = 3
-  desired_capacity = 3
+  min_size = 4
+  desired_capacity = 4
   health_check_grace_period = 5
   target_group_arns = [aws_lb_target_group.webtarget.arn]
   vpc_zone_identifier = [aws_subnet.web1.id,aws_subnet.web2.id]
