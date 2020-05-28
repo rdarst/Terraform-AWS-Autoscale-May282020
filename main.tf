@@ -313,9 +313,9 @@ resource "aws_lb_listener" "sgwlb" {
 resource "aws_autoscaling_group" "sgw_asg" {
   name = "cloudguard-layer-autoscale"
   launch_configuration = aws_launch_configuration.sgw_conf.id
-  max_size = 5
-  min_size = 2
-  desired_capacity = 2
+  max_size = 4
+  min_size = 4
+  desired_capacity = 4
   target_group_arns = [aws_lb_target_group.sgwtarget.arn]
   vpc_zone_identifier = [aws_subnet.external1.id,aws_subnet.external2.id]
   tag {
