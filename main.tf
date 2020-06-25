@@ -1,5 +1,5 @@
 variable "key_name" {
-  description = "Desired name of AWS key pair"
+  description = "Desired name of  AWS key pair"
 }
 variable "aws_vpc_cidr" {
 }
